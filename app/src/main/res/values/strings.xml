@@ -1,3 +1,43 @@
 <resources>
     <string name="app_name">EkoAgroMarket</string>
+
+
+    <string-array name="fragments">
+        <item>Wybierz sekcję</item>
+        <item>Paczki od rolnika</item>
+        <item>Warzywa</item>
+        <item>Owoce</item>
+        <item>Przetwory domowe</item>
+        <item>Ryby i Mięso</item>
+    </string-array>
+
+    <!-- DRAWER -->
+    <string name="user_email">Nazwa użytkowanika emial</string>
+    <string name="user_full_name">Pełne imie</string>
+    <string name="nsvig">Moja okolica</string>
+    <string name="action_share_frend">Udostępnij</string>
+    <string name="message">Wiadomości</string>
+    <string name="ads">Moje ogłoszenia</string>
+    <string name="favprite">Ulubione</string>
+    <string name="lav">Prawo i podatki</string>
+    <string name="add_ad">Dodaj ogłoszenie</string>
+    <string name="nav_category_other">Inne</string>
+    <string name="action_settings">Ustawienia</string>
+
+    <!-- FRAGEMNTY -->
+    <string name="wegetables">Warzywa</string>
+    <string name="fruits">Owoce</string>
+    <string name="homemade_preserves">Domowej roboty</string>
+    <string name="fish_meet">Ryba i mięso</string>
+    <string name="services">Paczki od rolnika</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="search_title">Szukaj</string>
+    <string name="create_account">Nowy użytkownik</string>
+
+
+    <!-- OTHER -->
+    <string name="nav_open">open</string>
+    <string name="nav_close">close</string>
 </resources>
