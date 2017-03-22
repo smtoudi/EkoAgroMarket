@@ -50,6 +50,7 @@
                 app:layout_collapseMode="pin"
                 app:layout_collapseParallaxMultiplier="0.5"
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:tabGravity="center"
                 app:tabMode="scrollable" />
 
 
