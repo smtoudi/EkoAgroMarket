@@ -31,13 +31,36 @@
     <string name="fish_meet">Ryba i mięso</string>
     <string name="services">Paczki od rolnika</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
+    <!-- TOOLBAR -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="search_title">Szukaj</string>
-    <string name="create_account">Nowy użytkownik</string>
-
 
     <!-- OTHER -->
     <string name="nav_open">open</string>
     <string name="nav_close">close</string>
+
+    <!-- REGISTER NEW USER and LOGIN USER -->
+    <string name="RegisterUser">Nowy użytkownik</string>
+    <string name="create_account">Nowy użytkownik</string>
+    <string name="user_full_name_login">Nazwa użytkownika</string>
+    <string name="email">Adres email</string>
+    <string name="password">Hasło</string>
+    <string name="password2">Powtórz hasło</string>
+    <string name="postcode">Kod pocztowy</string>
+    <string name="number_phone">Numer telefonu</string>
+    <string name="city">Miejscowość</string>
+    <string name="cancel">Anuluj</string>
+    <string name="register">Dodaj</string>
+    <string name="email_reg">email</string>
+    <string name="login">Zaloguj</string>
+    <string name="fab_user_facebook">Zaloguj za pomocą FACEBOOK</string>
+    <string name="fab_user_google">ZALOGUJ ZA POMOCĄ GOOGLE</string>
+    <string name="account_created">Konto zostało założone</string>
+    <string name="empty_email_error">To pole nie może być puste</string>
+    <string name="empty_password_error">To pole nie może być puste</string>
+
+
+
+
+
 </resources>

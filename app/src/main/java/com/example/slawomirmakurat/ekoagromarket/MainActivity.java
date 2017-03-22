@@ -11,6 +11,7 @@ import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
@@ -30,6 +31,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.example.slawomirmakurat.ekoagromarket.drawer.DrawerAddAd;
+import com.example.slawomirmakurat.ekoagromarket.user.Login;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -90,6 +92,35 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         ImageView avatarView = (ImageView) navigationView.getHeaderView(0).findViewById(R.id.avatar);
         avatarView.setImageDrawable(avatar);
     }
+
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        switch (id) {
+//            case R.id.action_settings:
+//                Snackbar.make(drawer, string.some_settings, Snackbar.LENGTH_SHORT).show();
+//               return true;
+            case R.id.action_create_account:
+                Intent i = new Intent(this, Login.class);
+                startActivity(i);
+                return true;
+//            case R.id.search:
+//                Intent search = new Intent(this, SearchView.class);
+//                startActivity(search);
+//            return true;
+//            case R.id.action_share:
+//                Intent action_share = new Intent(this, ShareActionProvider.class);
+//                startActivity(action_share);
+
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
