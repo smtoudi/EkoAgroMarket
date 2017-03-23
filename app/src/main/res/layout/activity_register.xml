@@ -41,14 +41,16 @@
                 android:id="@+id/user_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:animateLayoutChanges="true" />
+                android:animateLayoutChanges="true" >
 
-            <android.support.design.widget.TextInputEditText
-                android:id="@+id/user_name_edit"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/user_full_name_login"
-                android:inputType="textEmailAddress" />
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/loginRegister_editText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/user_full_name_login"
+                    android:inputType="textEmailAddress" />
+            </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
                 android:id="@+id/email_layout"
@@ -57,7 +59,7 @@
                 android:animateLayoutChanges="true">
 
                 <android.support.design.widget.TextInputEditText
-                    android:id="@+id/email_edit"
+                    android:id="@+id/emailRegister_editText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/email"
@@ -81,14 +83,14 @@
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
-                android:id="@+id/password_register2"
+                android:id="@+id/passwordRegister_editText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:animateLayoutChanges="true"
                 app:passwordToggleEnabled="true">
 
                 <android.support.design.widget.TextInputEditText
-                    android:id="@+id/password_edit2"
+                    android:id="@+id/checkPasswordRegister_editText"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:hint="@string/password2"
@@ -97,17 +99,34 @@
 
 
             <android.support.design.widget.TextInputLayout
-                android:id="@+id/postcodee_registr"
+            android:id="@+id/post_codee_register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            app:passwordToggleEnabled="true">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/postcodeRegister_editText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/postcode"
+                android:inputType="number" />
+
+        </android.support.design.widget.TextInputLayout>
+
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/number_phone_register"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:animateLayoutChanges="true"
                 app:passwordToggleEnabled="true">
 
                 <android.support.design.widget.TextInputEditText
-                    android:id="@+id/postcode_register2"
+                    android:id="@+id/phoneNumberRegister_editText"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:hint="@string/postcode"
+                    android:hint="@string/number_phone"
                     android:inputType="number" />
 
             </android.support.design.widget.TextInputLayout>
