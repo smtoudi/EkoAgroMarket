@@ -25,8 +25,6 @@ import static com.example.slawomirmakurat.ekoagromarket.user.Login.KEY_ACCOUNT_C
 public class Register extends AppCompatActivity {
 
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,8 +33,6 @@ public class Register extends AppCompatActivity {
 
         CardView cardView = (CardView) findViewById(R.id.register_panel);
         TextView new_user_textView = (TextView) findViewById(R.id.new_user_textView);
-
-
         Button btn_cancel = (Button) findViewById(R.id.cancel);
         Button btn_add = (Button) findViewById(R.id.register_button);
 
@@ -67,9 +63,6 @@ public class Register extends AppCompatActivity {
         btn_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Register.this, MainActivity.class);
-                intent.putExtra(KEY_ACCOUNT_CREATED, true);
-                startActivity(intent);
 
                 boolean error = false;
 
