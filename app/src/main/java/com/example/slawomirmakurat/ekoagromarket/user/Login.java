@@ -11,6 +11,7 @@ import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.View;
+import android.widget.Button;
 
 import com.example.slawomirmakurat.ekoagromarket.MainActivity;
 import com.example.slawomirmakurat.ekoagromarket.R;
@@ -24,6 +25,11 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        final Button login_button = (Button) findViewById(R.id.login_button);
+        final Button cancel_button = (Button) findViewById(R.id.cancel_button);
+        final Button btn_new_user = (Button) findViewById(R.id.btn_new_user);
+        final Button btn_user_facebook = (Button) findViewById(R.id.btn_user_facebook);
+        final Button btn_user_google = (Button) findViewById(R.id.btn_user_google);
 
         final CoordinatorLayout container = (CoordinatorLayout) findViewById(R.id.activity_login);
         final TextInputLayout loginInputLayout = (TextInputLayout) findViewById(R.id.email_log_layout);
@@ -31,10 +37,10 @@ public class Login extends AppCompatActivity {
         final TextInputEditText emailInput = (TextInputEditText) findViewById(R.id.email_log_edittext);
         final TextInputEditText passwordInput = (TextInputEditText) findViewById(R.id.password_log_edittext);
 
-    setTextWatcher(emailInput, loginInputLayout);
-    setTextWatcher(passwordInput, passwordInputLayout);
+        setTextWatcher(emailInput, loginInputLayout);
+        setTextWatcher(passwordInput, passwordInputLayout);
 
-    findViewById(R.id.login_button).setOnClickListener(new View.OnClickListener() {
+        login_button.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
 
@@ -63,23 +69,13 @@ public class Login extends AppCompatActivity {
         }
     });
 
-
-    boolean accountCreated = getIntent().getBooleanExtra(KEY_ACCOUNT_CREATED, false);
-
+        boolean accountCreated = getIntent().getBooleanExtra(KEY_ACCOUNT_CREATED, false);
 
         if (accountCreated) {
         Snackbar.make(container, R.string.account_created, Snackbar.LENGTH_LONG).show();
     }
 
-
-    findViewById(R.id.cancel_button).setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            startActivity(new Intent(Login.this, MainActivity.class));
-        }
-    });
-}
-
+    }
 
     private void setTextWatcher(final TextInputEditText editText, final TextInputLayout inputLayout) {
         editText.addTextChangedListener(new TextWatcher() {

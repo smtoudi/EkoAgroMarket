@@ -102,7 +102,7 @@
                 android:text="@string/RegisterUser" />
 
             <Button
-                android:id="@+id/fab_user_facebook"
+                android:id="@+id/btn_user_facebook"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="end|bottom"
@@ -112,7 +112,7 @@
                 android:textColor="#ffffff" />
 
             <Button
-                android:id="@+id/fab_user_google"
+                android:id="@+id/btn_user_google"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="end|bottom"
