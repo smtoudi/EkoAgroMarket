@@ -30,7 +30,7 @@
             android:paddingTop="16dp">
 
             <TextView
-                android:id="@+id/app_name"
+                android:id="@+id/new_user_textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingBottom="16dp"

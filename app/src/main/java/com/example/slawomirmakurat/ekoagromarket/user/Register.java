@@ -24,12 +24,7 @@ import static com.example.slawomirmakurat.ekoagromarket.user.Login.KEY_ACCOUNT_C
 
 public class Register extends AppCompatActivity {
 
-    private CardView cardView = (CardView) findViewById(R.id.register_panel);
-    private TextView textAppName = (TextView) findViewById(R.id.app_name);
 
-
-    private Button btn_cancel = (Button) findViewById(R.id.cancel);
-    private Button btn_add = (Button) findViewById(R.id.register_button);
 
 
     @Override
@@ -37,8 +32,15 @@ public class Register extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        final CoordinatorLayout container = (CoordinatorLayout) findViewById(R.id.activity_register);
 
+        CardView cardView = (CardView) findViewById(R.id.register_panel);
+        TextView new_user_textView = (TextView) findViewById(R.id.new_user_textView);
+
+
+        Button btn_cancel = (Button) findViewById(R.id.cancel);
+        Button btn_add = (Button) findViewById(R.id.register_button);
+
+        final CoordinatorLayout container = (CoordinatorLayout) findViewById(R.id.activity_register);
         final TextInputLayout user_name = (TextInputLayout) findViewById(R.id.user_name);
         final TextInputLayout email_layout = (TextInputLayout) findViewById(R.id.email_layout);
         final TextInputLayout password_register = (TextInputLayout) findViewById(R.id.passwordRegister);
@@ -65,7 +67,7 @@ public class Register extends AppCompatActivity {
         btn_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Register.this, Login.class);
+                Intent intent = new Intent(Register.this, MainActivity.class);
                 intent.putExtra(KEY_ACCOUNT_CREATED, true);
                 startActivity(intent);
 
