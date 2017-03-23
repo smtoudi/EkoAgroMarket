@@ -25,11 +25,11 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
 
-    final CoordinatorLayout container = (CoordinatorLayout) findViewById(R.id.activity_register);
-    final TextInputLayout loginInputLayout = (TextInputLayout) findViewById(R.id.email_layout);
-    final TextInputLayout passwordInputLayout = (TextInputLayout) findViewById(R.id.password_layout);
-    final TextInputEditText emailInput = (TextInputEditText) findViewById(R.id.email_edit);
-    final TextInputEditText passwordInput = (TextInputEditText) findViewById(R.id.password_edit);
+        final CoordinatorLayout container = (CoordinatorLayout) findViewById(R.id.activity_login);
+        final TextInputLayout loginInputLayout = (TextInputLayout) findViewById(R.id.email_log_layout);
+        final TextInputLayout passwordInputLayout = (TextInputLayout) findViewById(R.id.password_log_layout);
+        final TextInputEditText emailInput = (TextInputEditText) findViewById(R.id.email_log_edittext);
+        final TextInputEditText passwordInput = (TextInputEditText) findViewById(R.id.password_log_edittext);
 
     setTextWatcher(emailInput, loginInputLayout);
     setTextWatcher(passwordInput, passwordInputLayout);
