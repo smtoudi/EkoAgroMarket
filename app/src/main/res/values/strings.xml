@@ -14,11 +14,11 @@
     <!-- DRAWER -->
     <string name="user_email">Nazwa użytkowanika emial</string>
     <string name="user_full_name">Pełne imie</string>
-    <string name="nsvig">Moja okolica</string>
+    <string name="navig">Moja okolica</string>
     <string name="action_share_frend">Udostępnij</string>
     <string name="message">Wiadomości</string>
     <string name="ads">Moje ogłoszenia</string>
-    <string name="favprite">Ulubione</string>
+    <string name="favorite">Ulubione</string>
     <string name="lav">Prawo i podatki</string>
     <string name="add_ad">Dodaj ogłoszenie</string>
     <string name="nav_category_other">Inne</string>
@@ -58,9 +58,24 @@
     <string name="account_created">Konto zostało założone</string>
     <string name="empty_email_error">To pole nie może być puste</string>
     <string name="empty_password_error">To pole nie może być puste</string>
+    <string name="enter_a_valid">Niepoprawny format</string>
+    <string name="password_a_valid">Hasło musi mięć od 4 do 10 znaków</string>
+    <string name="login_failed">Logowanie nie udane</string>
+    <string name="autoryzation">Logowanie</string>
 
-
-
+    <!-- ADD ADS -->
+    <string name="CheckBox_season">Sezon</string>
+    <string name="CheckBox_year">Cały rok</string>
+    <string name="CheckBox_ask">Zapytaj</string>
+    <string name="availability">Dostępność</string>
+    <string name="Title">Nagłówek</string>
+    <string name="More">Opis produktu</string>
+    <string name="packing">Opakowanie</string>
+    <string name="packing_dec">Opis opakowania</string>
+    <string name="login_ok">Zalogowano poprawnie</string>
+    <string name="post_code">Poprawny format to XX-XXX</string>
+    <string name="phone_number_register">Poprawny format xxxxxxxxx</string>
+    <string name="register_dialog">Rejestracja</string>
 
 
 </resources>

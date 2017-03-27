@@ -10,7 +10,7 @@
 
     <item
         android:id="@+id/action_navig"
-        android:title="@string/nsvig"
+        android:title="@string/navig"
         android:icon="@drawable/ic_nav_white_24dp"
         app:showAsAction="never" />
 
@@ -34,7 +34,7 @@
 
     <item
         android:id="@+id/action_my_favprite"
-        android:title="@string/favprite"
+        android:title="@string/favorite"
         android:icon="@drawable/ic_star_white_24dp"
         app:showAsAction="never"/>
 

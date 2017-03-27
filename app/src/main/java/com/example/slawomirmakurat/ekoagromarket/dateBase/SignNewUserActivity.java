@@ -17,21 +17,15 @@ import butterknife.BindView;
 
 public class SignNewUserActivity extends AppCompatActivity {
 
-    @BindView(R.id.loginRegister_editText)
-    EditText loginEditText;
-    @BindView(R.id.emailRegister_editText)
-    EditText emailEditText;
-    @BindView(R.id.passwordRegister_editText)
-    EditText passwordEditText;
-    @BindView(R.id.checkPasswordRegister_editText)
-    EditText checkPasswordEditText;
-    @BindView(R.id.postcodeRegister_editText)
-    EditText postcodeEditText;
-    @BindView(R.id.phoneNumberRegister_editText)
-    EditText phoneNumberEditText;
+    @BindView(R.id.loginRegister_editText) EditText loginEditText;
+    @BindView(R.id.emailRegister_editText) EditText emailEditText;
+    @BindView(R.id.passwordRegister_editText) EditText passwordEditText;
+    @BindView(R.id.checkPasswordRegister_editText) EditText checkPasswordEditText;
+    @BindView(R.id.postcodeRegister_editText) EditText postcodeEditText;
+    @BindView(R.id.phoneNumberRegister_editText) EditText phoneNumberEditText;
 
-    @BindView(R.id.register_button)
-    Button registerButton;
+    @BindView(R.id.register_button) Button registerButton;
+    @BindView(R.id.cancel_button_register) Button canelButoon;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {

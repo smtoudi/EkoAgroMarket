@@ -47,35 +47,37 @@
                 android:id="@+id/textView8"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Dostępność"
+                android:text="@string/availability"
                 android:textSize="18dp" />
 
-            <RadioGroup
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:orientation="horizontal">
 
-                <RadioButton
-                    android:id="@+id/radioButton3"
+                <CheckBox
+                    android:id="@+id/checkBox_season"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Sezon" />
+                    android:text="@string/CheckBox_season" />
 
-                <RadioButton
-                    android:id="@+id/radioButton2"
+                <CheckBox
+                    android:id="@+id/checkBox_year"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Cały rok" />
+                    android:text="@string/CheckBox_year" />
 
-                <RadioButton
-                    android:id="@+id/radioButton"
+                <CheckBox
+                    android:id="@+id/checkBox_ask"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Pytaj" />
-            </RadioGroup>
+                    android:text="@string/CheckBox_ask" />
+
+            </LinearLayout>
 
             <Space
                 android:layout_width="match_parent"
@@ -88,7 +90,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
-                android:hint="Tytuł"
+                android:hint="@string/Title"
                 android:inputType="textPersonName" />
 
             <EditText
@@ -96,7 +98,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="86dp"
                 android:ems="10"
-                android:hint="Opis"
+                android:hint="@string/More"
                 android:inputType="textMultiLine" />
 
             <LinearLayout
@@ -109,7 +111,7 @@
                     android:id="@+id/textView15"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Opakowanie"
+                    android:text="@string/packing"
                     android:textSize="18dp" />
 
                 <EditText
@@ -117,7 +119,7 @@
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="Opis opakowania"
+                    android:hint="@string/packing_dec"
                     android:inputType="text"
                     android:layout_weight="0.41" />
 

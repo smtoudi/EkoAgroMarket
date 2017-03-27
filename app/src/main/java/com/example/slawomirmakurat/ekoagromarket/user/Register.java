@@ -1,48 +1,69 @@
 package com.example.slawomirmakurat.ekoagromarket.user;
 
-import android.app.Activity;
+
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.CoordinatorLayout;
-import android.support.design.widget.Snackbar;
+
 import android.support.design.widget.TextInputEditText;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.CardView;
+
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
+import android.widget.EditText;
 
+import android.widget.Toast;
 
-import com.example.slawomirmakurat.ekoagromarket.MainActivity;
 import com.example.slawomirmakurat.ekoagromarket.R;
 
-import static com.example.slawomirmakurat.ekoagromarket.user.Login.KEY_ACCOUNT_CREATED;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
+
 
 public class Register extends AppCompatActivity {
+
+    private static final String TAG = "register";
+    private static final int REQUEST_SIGNUP = 0;
+
+    @BindView(R.id.loginRegister_editText)
+    EditText loginEditText;
+    @BindView(R.id.emailRegister_editText)
+    EditText emailEditText;
+    @BindView(R.id.passwordRegister_editText)
+    EditText passwordEditText;
+    @BindView(R.id.checkPasswordRegister_editText)
+    EditText checkPasswordEditText;
+    @BindView(R.id.postcodeRegister_editText)
+    EditText postcodeEditText;
+    @BindView(R.id.phoneNumberRegister_editText)
+    EditText phoneNumberEditText;
+
+    @BindView(R.id.register_button)
+    Button registerButton;
+    @BindView(R.id.cancel_button_register)
+    Button cancelButtonRegister;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+        ButterKnife.bind(this);
 
-
-        CardView cardView = (CardView) findViewById(R.id.register_panel);
-        TextView new_user_textView = (TextView) findViewById(R.id.new_user_textView);
-        Button btn_cancel = (Button) findViewById(R.id.cancel);
-        Button btn_add = (Button) findViewById(R.id.register_button);
-
-        final CoordinatorLayout container = (CoordinatorLayout) findViewById(R.id.activity_register);
         final TextInputLayout user_name = (TextInputLayout) findViewById(R.id.user_name);
         final TextInputLayout email_layout = (TextInputLayout) findViewById(R.id.email_layout);
         final TextInputLayout password_register = (TextInputLayout) findViewById(R.id.passwordRegister);
         final TextInputLayout post_code_register = (TextInputLayout) findViewById(R.id.post_codee_register);
         final TextInputLayout password_register_check = (TextInputLayout) findViewById(R.id.password_register);
         final TextInputLayout number_phone_register = (TextInputLayout) findViewById(R.id.number_phone_register);
+
         final TextInputEditText loginRegister_editText = (TextInputEditText) findViewById(R.id.loginRegister_editText);
         final TextInputEditText emailRegister_editText = (TextInputEditText) findViewById(R.id.emailRegister_editText);
         final TextInputEditText password_editText = (TextInputEditText) findViewById(R.id.passwordRegister_editText);
@@ -50,8 +71,6 @@ public class Register extends AppCompatActivity {
         final TextInputEditText postcodeRegister_editText = (TextInputEditText) findViewById(R.id.postcodeRegister_editText);
         final TextInputEditText phoneNumberRegister_editText = (TextInputEditText) findViewById(R.id.phoneNumberRegister_editText);
 
-
-        // setTextWatcher(TextInputEditText, TextInputLayout);
         setTextWatcher(loginRegister_editText, user_name);
         setTextWatcher(emailRegister_editText, email_layout);
         setTextWatcher(password_editText, password_register);
@@ -59,12 +78,20 @@ public class Register extends AppCompatActivity {
         setTextWatcher(postcodeRegister_editText, post_code_register);
         setTextWatcher(phoneNumberRegister_editText, number_phone_register);
 
-
-        btn_add.setOnClickListener(new View.OnClickListener() {
+        cancelButtonRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                onBackPressed();
+            }
+        });
 
+
+        registerButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
                 boolean error = false;
+
 
                 if (TextUtils.isEmpty(loginRegister_editText.getText().toString())) {
                     user_name.setError(getString(R.string.empty_email_error));
@@ -90,25 +117,17 @@ public class Register extends AppCompatActivity {
                     number_phone_register.setError(getString(R.string.empty_password_error));
                     error = true;
                 }
+
                 if (!error) {
-                    startActivity(new Intent(Register.this, MainActivity.class));
+                    register();
                 }
 
             }
         });
 
 
-        btn_cancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                onBackPressed();
-            }
-        });
-        boolean accountCreated = getIntent().getBooleanExtra(KEY_ACCOUNT_CREATED, false);
 
-        if (accountCreated) {
-            Snackbar.make(container, R.string.account_created, Snackbar.LENGTH_LONG).show();
-        }
+
     }
 
     private void setTextWatcher(final TextInputEditText editText, final TextInputLayout inputLayout) {
@@ -128,7 +147,114 @@ public class Register extends AppCompatActivity {
             public void afterTextChanged(Editable editable) {
             }
         });
+
     }
 
+    public void register() {
+        Log.d(TAG, "Register");
 
+        if (!validate()) {
+            onLoginFailed();
+            return;
+        }
+
+        registerButton.setEnabled(false);
+
+        final ProgressDialog progressDialog = new ProgressDialog(Register.this, R.style.AppTheme_Dark_Dialog);
+        progressDialog.setIndeterminate(true);
+        progressDialog.setMessage(getString(R.string.register_dialog));
+        progressDialog.show();
+
+        String email = emailEditText.getText().toString();
+        String password = passwordEditText.getText().toString();
+        String chceckpassword = checkPasswordEditText.getText().toString();
+        String postcode = postcodeEditText.getText().toString();
+        String phone = phoneNumberEditText.getText().toString();
+
+
+        new android.os.Handler().postDelayed(
+                new Runnable() {
+                    public void run() {
+
+                        onLoginSuccess();
+
+                        progressDialog.dismiss();
+                    }
+                }, 3000);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == REQUEST_SIGNUP) {
+            if (resultCode == RESULT_OK) {
+
+                this.finish();
+            }
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        moveTaskToBack(true);
+    }
+
+    public void onLoginSuccess() {
+        registerButton.setEnabled(true);
+        finish();
+    }
+
+    public void onLoginFailed() {
+        Toast.makeText(getBaseContext(), getString(R.string.login_failed), Toast.LENGTH_LONG).show();
+
+        registerButton.setEnabled(true);
+    }
+
+    public boolean validate() {
+        boolean valid = true;
+
+        String email = emailEditText.getText().toString();
+        String password = passwordEditText.getText().toString();
+        String chceckpassword = checkPasswordEditText.getText().toString();
+        String postcode = postcodeEditText.getText().toString();
+        String phone = phoneNumberEditText.getText().toString();
+
+        if (email.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            emailEditText.setError(getString(R.string.enter_a_valid));
+            valid = false;
+        } else {
+            emailEditText.setError(null);
+        }
+
+        if (password.isEmpty() || password.length() < 4 || password.length() > 10) {
+            passwordEditText.setError(getString(R.string.password_a_valid));
+            valid = false;
+        } else {
+            passwordEditText.setError(null);
+        }
+
+        if (chceckpassword.isEmpty() || password.length() < 4 || password.length() > 10) {
+            checkPasswordEditText.setError(getString(R.string.password_a_valid));
+            valid = false;
+        } else {
+            checkPasswordEditText.setError(null);
+        }
+
+        if (postcode.isEmpty() || postcode.length() <6 || postcode.length()> 6 ) {
+            postcodeEditText.setError(getString(R.string.post_code));
+            valid = false;
+        } else {
+            postcodeEditText.setError(null);
+        }
+
+        if (phone.isEmpty() || postcode.length() == 9) {
+            phoneNumberEditText.setError(getString(R.string.phone_number_register));
+            valid = false;
+        } else {
+            phoneNumberEditText.setError(null);
+        }
+
+        return valid;
+    }
 }
+
