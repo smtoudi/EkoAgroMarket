@@ -1,14 +1,11 @@
 package com.example.slawomirmakurat.ekoagromarket.user;
 
-
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-
 import android.support.design.widget.TextInputEditText;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
-
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
@@ -21,10 +18,8 @@ import android.widget.Toast;
 
 import com.example.slawomirmakurat.ekoagromarket.R;
 
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
-
 
 
 public class Register extends AppCompatActivity {
@@ -49,7 +44,6 @@ public class Register extends AppCompatActivity {
     Button registerButton;
     @BindView(R.id.cancel_button_register)
     Button cancelButtonRegister;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,17 +75,15 @@ public class Register extends AppCompatActivity {
         cancelButtonRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                onBackPressed();
+                startActivity(new Intent(Register.this, Login.class));
             }
         });
-
 
         registerButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 boolean error = false;
-
 
                 if (TextUtils.isEmpty(loginRegister_editText.getText().toString())) {
                     user_name.setError(getString(R.string.empty_email_error));
@@ -121,12 +113,8 @@ public class Register extends AppCompatActivity {
                 if (!error) {
                     register();
                 }
-
             }
         });
-
-
-
 
     }
 
@@ -147,7 +135,6 @@ public class Register extends AppCompatActivity {
             public void afterTextChanged(Editable editable) {
             }
         });
-
     }
 
     public void register() {
@@ -171,7 +158,6 @@ public class Register extends AppCompatActivity {
         String postcode = postcodeEditText.getText().toString();
         String phone = phoneNumberEditText.getText().toString();
 
-
         new android.os.Handler().postDelayed(
                 new Runnable() {
                     public void run() {
@@ -187,7 +173,6 @@ public class Register extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == REQUEST_SIGNUP) {
             if (resultCode == RESULT_OK) {
-
                 this.finish();
             }
         }
@@ -253,7 +238,6 @@ public class Register extends AppCompatActivity {
         } else {
             phoneNumberEditText.setError(null);
         }
-
         return valid;
     }
 }
