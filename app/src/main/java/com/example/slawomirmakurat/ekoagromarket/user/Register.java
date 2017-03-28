@@ -115,7 +115,6 @@ public class Register extends AppCompatActivity {
                 }
             }
         });
-
     }
 
     private void setTextWatcher(final TextInputEditText editText, final TextInputLayout inputLayout) {
@@ -218,14 +217,21 @@ public class Register extends AppCompatActivity {
             passwordEditText.setError(null);
         }
 
-        if (chceckpassword.isEmpty() || password.length() < 4 || password.length() > 10) {
-            checkPasswordEditText.setError(getString(R.string.password_a_valid));
+        if (!(password.equals(chceckpassword))) {
+            checkPasswordEditText.setError(getString(R.string.check_password));
             valid = false;
         } else {
             checkPasswordEditText.setError(null);
         }
 
-        if (postcode.isEmpty() || postcode.length() <6 || postcode.length()> 6 ) {
+//        if (!(checkPasswordEditText.equals(new String(passwordEditText)) {
+//            checkPasswordEditText.setError(getString(R.string.password_a_valid));
+//            valid = false;
+//        } else {
+//            checkPasswordEditText.setError(null);
+//        }
+
+        if (postcode.isEmpty() || postcode.length() <5 || postcode.length()> 6 ) {
             postcodeEditText.setError(getString(R.string.post_code));
             valid = false;
         } else {

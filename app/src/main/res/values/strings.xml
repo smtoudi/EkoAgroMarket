@@ -74,8 +74,8 @@
     <string name="packing_dec">Opis opakowania</string>
     <string name="login_ok">Zalogowano poprawnie</string>
     <string name="post_code">Poprawny format to XX-XXX</string>
-    <string name="phone_number_register">Poprawny format xxxxxxxxx</string>
+    <string name="phone_number_register">Poprawny format 511622733</string>
     <string name="register_dialog">Rejestracja</string>
-
+    <string name="check_password">Hasła muszą być takie same</string>
 
 </resources>

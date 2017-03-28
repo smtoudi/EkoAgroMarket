@@ -182,7 +182,7 @@ public class Login extends AppCompatActivity {
         boolean valid = true;
 
         String email = emailInput.getText().toString();
-        String password = passwordInput.getText().toString();
+//        String password = passwordInput.getText().toString();
 
         if (email.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             emailInput.setError(getString(R.string.enter_a_valid));
@@ -191,12 +191,12 @@ public class Login extends AppCompatActivity {
             emailInput.setError(null);
         }
 
-        if (password.isEmpty() || password.length() < 4 || password.length() > 10) {
-            passwordInput.setError(getString(R.string.password_a_valid));
-            valid = false;
-        } else {
-            passwordInput.setError(null);
-        }
+//        if (password.isEmpty() || password.length() < 4 || password.length() > 10) {
+//            passwordInput.setError(getString(R.string.password_a_valid));
+//            valid = false;
+//        } else {
+//            passwordInput.setError(null);
+//        }
 
         return valid;
     }
