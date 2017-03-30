@@ -127,6 +127,7 @@ public class Login extends AppCompatActivity {
             return;
         }
 
+
         login_button.setEnabled(false);
 
         final ProgressDialog progressDialog = new ProgressDialog(Login.this, R.style.AppTheme_Dark_Dialog);
