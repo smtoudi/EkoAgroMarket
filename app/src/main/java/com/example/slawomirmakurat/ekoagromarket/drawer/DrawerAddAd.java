@@ -9,7 +9,6 @@ import android.provider.MediaStore;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -17,8 +16,6 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.Spinner;
 
 import com.example.slawomirmakurat.ekoagromarket.R;
@@ -29,8 +26,6 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
-
-import static com.example.slawomirmakurat.ekoagromarket.R.styleable.View;
 
 public class DrawerAddAd extends AppCompatActivity {
 
@@ -45,6 +40,8 @@ public class DrawerAddAd extends AppCompatActivity {
     private CheckBox checkBox_season;
     private CheckBox checkBox_year;
     private CheckBox checkBox_ask;
+    private CheckBox checkBox_detail;
+    private CheckBox checkBox_whoLesale;
     private Button seeAd_button;
     private Button addd_Ad_button;
 
@@ -61,13 +58,14 @@ public class DrawerAddAd extends AppCompatActivity {
 
         camera_imageButton = (ImageButton) findViewById(R.id.camera_imageButton);
         spinner_category = (Spinner) findViewById(R.id.spinner_category);
-        titleAd_editText = (EditText) findViewById(R.id.titleAd_editText);
-        textAd_editText = (EditText) findViewById(R.id.textAd_editText);
+        titleAd_editText = (EditText) findViewById(R.id.title_Ad_editText);
+        textAd_editText = (EditText) findViewById(R.id.text_Ad_editText);
 
-        seeAd_button = (Button) findViewById(R.id.seeAd_button);
-        addd_Ad_button = (Button) findViewById(R.id.addd_Ad_button);
+        seeAd_button = (Button) findViewById(R.id.button_seeAd);
+        addd_Ad_button = (Button) findViewById(R.id.button_ad_dd_Ad);
 
         camera_imageButton.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
                 selectImage();
@@ -77,17 +75,17 @@ public class DrawerAddAd extends AppCompatActivity {
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.fragments, R.layout.support_simple_spinner_dropdown_item);
         adapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
         spinner_category.setAdapter(adapter);
-
-
+        
     }
 
-//    public void addListenerOnButtonClick() {
-//        checkBox_season = (CheckBox) findViewById(R.id.checkBox_season);
-//        checkBox_year = (CheckBox) findViewById(R.id.checkBox_year);
-//        checkBox_ask = (CheckBox) findViewById(R.id.checkBox_ask);
-//
-//
-//    }
+    public void addListenerOnButtonClick() {
+        checkBox_season = (CheckBox) findViewById(R.id.checkBox_season);
+        checkBox_year = (CheckBox) findViewById(R.id.checkBox_year);
+
+        checkBox_detail = (CheckBox) findViewById(R.id.checkBox_detail);
+        checkBox_whoLesale = (CheckBox) findViewById(R.id.checkBox_wholesale);
+
+    }
 
     private void selectImage() {
         final CharSequence[] items = {"Take Photo", "Choose from Library", "Cancel"};

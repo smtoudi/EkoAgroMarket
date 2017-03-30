@@ -100,7 +100,7 @@
                 android:layout_gravity="end|bottom"
                 android:layout_margin="4dp"
                 android:background="#6d84b4"
-                android:text="@string/fab_user_facebook"
+                android:text="@string/btn_user_facebook"
                 android:textColor="#ffffff" />
 
             <android.support.v7.widget.AppCompatButton
@@ -110,7 +110,7 @@
                 android:layout_gravity="end|bottom"
                 android:layout_margin="4dp"
                 android:background="#e76c7f"
-                android:text="@string/fab_user_google"
+                android:text="@string/btn_user_google"
                 android:textColor="#ffffff" />
 
         </LinearLayout>

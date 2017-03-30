@@ -38,16 +38,15 @@ public class Login extends AppCompatActivity {
     @BindView(R.id.btn_user_google)
     Button btn_user_google;
 
-    @BindView(R.id.email_log_layout)
-    TextInputLayout loginInputLayout;
-    @BindView(R.id.password_log_layout)
-    TextInputLayout passwordInputLayout;
-
     @BindView(R.id.email_log_edittext)
     TextInputEditText emailInput;
     @BindView(R.id.password_log_edittext)
     TextInputEditText passwordInput;
 
+    @BindView(R.id.email_log_layout)
+    TextInputLayout loginInputLayout;
+    @BindView(R.id.password_log_layout)
+    TextInputLayout passwordInputLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -182,7 +181,7 @@ public class Login extends AppCompatActivity {
         boolean valid = true;
 
         String email = emailInput.getText().toString();
-//        String password = passwordInput.getText().toString();
+        String password = passwordInput.getText().toString();
 
         if (email.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             emailInput.setError(getString(R.string.enter_a_valid));
@@ -191,13 +190,8 @@ public class Login extends AppCompatActivity {
             emailInput.setError(null);
         }
 
-//        if (password.isEmpty() || password.length() < 4 || password.length() > 10) {
-//            passwordInput.setError(getString(R.string.password_a_valid));
-//            valid = false;
-//        } else {
-//            passwordInput.setError(null);
-//        }
-
         return valid;
     }
+
+
 }

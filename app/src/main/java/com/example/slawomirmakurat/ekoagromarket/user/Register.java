@@ -199,7 +199,7 @@ public class Register extends AppCompatActivity {
 
         String email = emailEditText.getText().toString();
         String password = passwordEditText.getText().toString();
-        String chceckpassword = checkPasswordEditText.getText().toString();
+        String checkpassword = checkPasswordEditText.getText().toString();
         String postcode = postcodeEditText.getText().toString();
         String phone = phoneNumberEditText.getText().toString();
 
@@ -217,28 +217,21 @@ public class Register extends AppCompatActivity {
             passwordEditText.setError(null);
         }
 
-        if (!(password.equals(chceckpassword))) {
+        if (!(password.equals(checkpassword))) {
             checkPasswordEditText.setError(getString(R.string.check_password));
             valid = false;
         } else {
             checkPasswordEditText.setError(null);
         }
 
-//        if (!(checkPasswordEditText.equals(new String(passwordEditText)) {
-//            checkPasswordEditText.setError(getString(R.string.password_a_valid));
-//            valid = false;
-//        } else {
-//            checkPasswordEditText.setError(null);
-//        }
-
-        if (postcode.isEmpty() || postcode.length() <5 || postcode.length()> 6 ) {
+        if (postcode.isEmpty() || postcode.length() <5 || postcode.length()> 5 ) {
             postcodeEditText.setError(getString(R.string.post_code));
             valid = false;
         } else {
             postcodeEditText.setError(null);
         }
 
-        if (phone.isEmpty() || postcode.length() == 9) {
+        if (phone.isEmpty() || !android.util.Patterns.PHONE.matcher(phone).matches()) {
             phoneNumberEditText.setError(getString(R.string.phone_number_register));
             valid = false;
         } else {

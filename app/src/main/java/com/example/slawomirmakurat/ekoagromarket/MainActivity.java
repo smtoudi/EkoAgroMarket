@@ -1,27 +1,21 @@
 package com.example.slawomirmakurat.ekoagromarket;
 
-import android.app.SearchManager;
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
-import android.support.v4.view.MenuItemCompat;
-import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.SearchView;
 import android.support.v7.widget.ShareActionProvider;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -31,6 +25,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.example.slawomirmakurat.ekoagromarket.drawer.DrawerAddAd;
+import com.example.slawomirmakurat.ekoagromarket.drawer.Profile_user;
 import com.example.slawomirmakurat.ekoagromarket.user.Login;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -64,7 +59,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         tabLayout = (TabLayout) findViewById(R.id.tab_layout);
         tabLayout.setupWithViewPager(viewPager);
 
-        fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab = (FloatingActionButton) findViewById(R.id.fab_msg_user);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -148,7 +143,67 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        return false;
+    public void onBackPressed() {
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
     }
+
+    @Override
+    public boolean onNavigationItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.action_home) {
+            Intent i = new Intent(this, Profile_user.class);
+            startActivity(i);
+        }
+
+//        if (id == R.id.action_navig) {
+//            Intent i = new Intent(this, DrawerNavig.class);
+//            startActivity(i);
+//        }
+//
+//        if (id == R.id.nav_add_frend) {
+//            Intent i = new Intent(this, DrawerAddFrend.class);
+//            startActivity(i);
+//        }
+//        if (id == R.id.action_message) {
+//            Intent i = new Intent(this, DrawerNavig.class);
+//            startActivity(i);
+//        }
+//
+//        if (id == R.id.action_my_ads) {
+//            Intent i = new Intent(this, DrawerMyAds.class);
+//            startActivity(i);
+//        }
+//
+//        if (id == R.id.action_my_favprite) {
+//            Intent i = new Intent(this, DrawerMyFavorite.class);
+//            startActivity(i);
+//        }
+//
+//        if (id == R.id.action_lav) {
+//            Intent i = new Intent(this, DrawerLav.class);
+//            startActivity(i);
+//        }
+//
+//        if (id == R.id.action_add_ad) {
+//            Intent i = new Intent(this, DrawerAddAd.class);
+//            startActivity(i);
+//        }
+//
+//        if (id == R.id.nav_settings) {
+//            Intent i = new Intent(this, DrawerSettings.class);
+//            startActivity(i);
+//        }
+//
+//
+        DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawerLayout.closeDrawer(GravityCompat.START);
+        return true;
+
+    }
+
 }
