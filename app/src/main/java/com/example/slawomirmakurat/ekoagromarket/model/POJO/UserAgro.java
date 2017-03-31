@@ -19,19 +19,7 @@ public class UserAgro {
     private ImageView avatarUserAgro;
     private ImageView UserImage;
     @Nullable
-    private List<AddNews> news;
-
-
-    public UserAgro(int id, String login, String city, String post_code, Integer certificate, ImageView avatarUserAgro, ImageView userImage, List<AddNews> news) {
-        this.id = id;
-        this.login = login;
-        this.city = city;
-        this.post_code = post_code;
-        this.certificate = certificate;
-        this.avatarUserAgro = avatarUserAgro;
-        UserImage = userImage;
-        this.news = news;
-    }
+    private List<AddProduct> news;
 
     public UserAgro(int id, String login, String city, String post_code, Integer certificate, ImageView avatarUserAgro, ImageView userImage) {
         this.id = id;
@@ -41,6 +29,17 @@ public class UserAgro {
         this.certificate = certificate;
         this.avatarUserAgro = avatarUserAgro;
         UserImage = userImage;
+    }
+
+    public UserAgro(int id, String login, String city, String post_code, Integer certificate, ImageView avatarUserAgro, ImageView userImage, List<AddProduct> news) {
+        this.id = id;
+        this.login = login;
+        this.city = city;
+        this.post_code = post_code;
+        this.certificate = certificate;
+        this.avatarUserAgro = avatarUserAgro;
+        UserImage = userImage;
+        this.news = news;
     }
 
     public int getId() {
@@ -100,11 +99,11 @@ public class UserAgro {
     }
 
     @Nullable
-    public List<AddNews> getNews() {
+    public List<AddProduct> getNews() {
         return news;
     }
 
-    public void setNews(@Nullable List<AddNews> news) {
+    public void setNews(@Nullable List<AddProduct> news) {
         this.news = news;
     }
 

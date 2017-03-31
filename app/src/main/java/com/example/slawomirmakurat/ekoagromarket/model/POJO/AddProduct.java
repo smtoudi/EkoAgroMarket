@@ -10,8 +10,7 @@ import java.util.List;
  * Created by slawomir.makurat on 2017-03-30.
  */
 
-class AddNews {
-
+public class AddProduct {
     private Long id;
     private String title;
     private String text;
@@ -21,11 +20,12 @@ class AddNews {
     private Integer detailCheckbox;
     private Integer wholesaleCheckbox;
     private ImageView image;
-
+    private int price;
     @Nullable
     private List<Categories> categories;
 
-    public AddNews(Long id, String title, String text, Date dateAdd, Integer seasonCheckbox, Integer yearCheckbox, Integer detailCheckbox, Integer wholesaleCheckbox, ImageView image, List<Categories> categories) {
+
+    public AddProduct(Long id, String title, String text, Date dateAdd, Integer seasonCheckbox, Integer yearCheckbox, Integer detailCheckbox, Integer wholesaleCheckbox, ImageView image, int price, List<Categories> categories) {
         this.id = id;
         this.title = title;
         this.text = text;
@@ -35,10 +35,11 @@ class AddNews {
         this.detailCheckbox = detailCheckbox;
         this.wholesaleCheckbox = wholesaleCheckbox;
         this.image = image;
+        this.price = price;
         this.categories = categories;
     }
 
-    public AddNews(Long id, String title, String text, Date dateAdd, Integer seasonCheckbox, Integer yearCheckbox, Integer detailCheckbox, Integer wholesaleCheckbox, ImageView image) {
+    public AddProduct(Long id, String title, String text, Date dateAdd, Integer seasonCheckbox, Integer yearCheckbox, Integer detailCheckbox, Integer wholesaleCheckbox, ImageView image, int price) {
         this.id = id;
         this.title = title;
         this.text = text;
@@ -48,6 +49,7 @@ class AddNews {
         this.detailCheckbox = detailCheckbox;
         this.wholesaleCheckbox = wholesaleCheckbox;
         this.image = image;
+        this.price = price;
     }
 
     public Long getId() {
@@ -122,6 +124,14 @@ class AddNews {
         this.image = image;
     }
 
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
     @Nullable
     public List<Categories> getCategories() {
         return categories;
@@ -133,7 +143,7 @@ class AddNews {
 
     @Override
     public String toString() {
-        return "AddNews{" +
+        return "AddProduct{" +
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", text='" + text + '\'' +
@@ -143,7 +153,10 @@ class AddNews {
                 ", detailCheckbox=" + detailCheckbox +
                 ", wholesaleCheckbox=" + wholesaleCheckbox +
                 ", image=" + image +
+                ", price=" + price +
                 ", categories=" + categories +
                 '}';
     }
 }
+
+

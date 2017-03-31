@@ -11,6 +11,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="horizontal"
     tools:context="com.example.slawomirmakurat.ekoagromarket.drawer.DrawerAddAd"
+    android:background="@color/colorBackground"
     android:weightSum="1">
 
     <ScrollView
@@ -83,7 +84,12 @@
 
             </android.support.design.widget.TextInputLayout>
 
-        <LinearLayout
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_weight="1" />
+
+            <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -92,10 +98,10 @@
 
             <TextView
                 android:id="@+id/textView8"
-                android:layout_width="113dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/availability"
-               />
+                android:textSize="18sp" />
 
 
             <CheckBox
@@ -114,6 +120,11 @@
 
             </LinearLayout>
 
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_weight="1" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -124,39 +135,69 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/quantty"
-                    android:textSize="18dp"
-                     />
+                    android:textSize="18sp"
+                    android:layout_weight="0.17" />
 
                 <CheckBox
                     android:id="@+id/checkBox_detail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.31"
+                    android:layout_weight="0.15"
                     android:text="@string/CheckBox_detail" />
 
                 <CheckBox
                     android:id="@+id/checkBox_wholesale"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.44"
+                    android:layout_weight="0.21"
                     android:text="@string/CheckBox_wholesale" />
 
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="65dp"
+                    android:layout_height="wrap_content"
+                    android:text="Cena:"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/price_editText"
+                    android:layout_width="72dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="number" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="zł"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
             <android.support.v7.widget.AppCompatButton
-                android:id="@+id/button_seeAd"
+                android:id="@+id/button_seeAd_product"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end|bottom"
                 android:layout_margin="4dp"
+                android:background="?android:attr/colorMultiSelectHighlight"
                 android:text="Zobacz ogłoszenie przed dodaniem" />
 
             <android.support.v7.widget.AppCompatButton
-                android:id="@+id/button_ad_dd_Ad"
+                android:id="@+id/button_ad_product"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end|bottom"
                 android:layout_margin="4dp"
+                android:background="?android:attr/colorMultiSelectHighlight"
                 android:text="Dodaj ogłoszenie" />
 
         </LinearLayout>

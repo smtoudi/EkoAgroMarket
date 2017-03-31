@@ -14,10 +14,9 @@ public class Category {
     private String name;
 
     @Nullable
-    private List<AddNews>news;
+    private List<AddProduct>news;
 
-
-    public Category(int id, String name, List<AddNews> news) {
+    public Category(int id, String name, List<AddProduct> news) {
         this.id = id;
         this.name = name;
         this.news = news;
@@ -45,11 +44,11 @@ public class Category {
     }
 
     @Nullable
-    public List<AddNews> getNews() {
+    public List<AddProduct> getNews() {
         return news;
     }
 
-    public void setNews(@Nullable List<AddNews> news) {
+    public void setNews(@Nullable List<AddProduct> news) {
         this.news = news;
     }
 
