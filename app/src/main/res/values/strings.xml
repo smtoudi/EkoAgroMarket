@@ -170,6 +170,7 @@
     </string>
     <string name="empty_field">To pole nie może być puste</string>
     <string name="priceValue">zł/szt/kg</string>
+    <string name="city_user">Miejscowość</string>
 
 
 </resources>
