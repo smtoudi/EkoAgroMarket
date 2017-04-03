@@ -196,7 +196,7 @@ public class DrawerAddAd extends AppCompatActivity  {
         startActivityForResult(Intent.createChooser(intent, "Wybierz plik"), SELECT_FILE);
     }
 
-    @SuppressWarnings("deprecation")
+
     private void onSelectFromGalleryResult(Intent data) {
         Bitmap bm = null;
         if (data != null) {

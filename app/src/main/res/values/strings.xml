@@ -169,6 +169,7 @@
         "when a user tries to pick up one of cards.\n\n"
     </string>
     <string name="empty_field">To pole nie może być puste</string>
+    <string name="priceValue">zł/szt/kg</string>
 
 
 </resources>

@@ -10,16 +10,17 @@ public class RegisterUser {
     private String email;
     private String password;
     private int post_code;
+    private int city;
     private int phone;
 
-    public RegisterUser(String login, String email, String password, int post_code, int phone) {
+    public RegisterUser(String login, String email, String password, int post_code, int city, int phone) {
         this.login = login;
         this.email = email;
         this.password = password;
         this.post_code = post_code;
+        this.city = city;
         this.phone = phone;
     }
-
 
     public String getLogin() {
         return login;
@@ -53,6 +54,14 @@ public class RegisterUser {
         this.post_code = post_code;
     }
 
+    public int getCity() {
+        return city;
+    }
+
+    public void setCity(int city) {
+        this.city = city;
+    }
+
     public int getPhone() {
         return phone;
     }
@@ -61,5 +70,15 @@ public class RegisterUser {
         this.phone = phone;
     }
 
-
+    @Override
+    public String toString() {
+        return "RegisterUser{" +
+                "login='" + login + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", post_code=" + post_code +
+                ", city=" + city +
+                ", phone=" + phone +
+                '}';
+    }
 }

@@ -171,14 +171,14 @@
                     android:layout_width="72dp"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:inputType="number" />
+                    android:inputType="number|numberSigned|numberDecimal" />
 
                 <TextView
                     android:id="@+id/textView3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="zł"
+                    android:text="@string/priceValue"
                     android:textSize="18sp" />
             </LinearLayout>
 

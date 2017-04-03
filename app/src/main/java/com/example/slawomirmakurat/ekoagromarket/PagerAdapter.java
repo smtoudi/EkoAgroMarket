@@ -54,7 +54,7 @@ public class PagerAdapter extends FragmentPagerAdapter {
             case 2:
                 return context.getString(R.string.fruits);
             case 3:
-            return context.getString(R.string.wegetables);
+                return context.getString(R.string.wegetables);
             case 4:
                 return context.getString(R.string.fish_meet);
 
