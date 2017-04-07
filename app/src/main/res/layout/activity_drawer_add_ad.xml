@@ -26,13 +26,28 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="true"
+                app:layout_collapseMode="parallax">
+
             <ImageButton
                 android:id="@+id/camera_imageButton"
                 android:layout_width="match_parent"
-                android:layout_height="202dp"
-                android:scaleType="fitCenter"
+                android:layout_height="match_parent"
                 android:background="#e2e2e2"
+                android:scaleType="center"
                 app:srcCompat="@android:drawable/ic_menu_camera" />
+
+
+            <com.example.slawomirmakurat.ekoagromarket.ThreeTwoImageView
+                android:id="@+id/backdropImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop" />
+
+            </FrameLayout>
 
             <Space
                 android:layout_width="match_parent"

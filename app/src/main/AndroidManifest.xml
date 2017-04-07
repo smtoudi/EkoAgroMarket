@@ -3,10 +3,10 @@
     package="com.example.slawomirmakurat.ekoagromarket">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.CAMERA" />
 
+    <uses-permission android:name="android.permission.CAMERA" />
     <uses-feature android:name="android.hardware.camera" />
-    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <!--<uses-feature android:name="android.hardware.camera.autofocus" />-->
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -31,6 +31,10 @@
         <activity
             android:name=".drawer.Profile_user"
             android:label="@string/title_activity_profile_user"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".model.POJO.view.ProductDetails"
+            android:label="@string/title_activity_product_details"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

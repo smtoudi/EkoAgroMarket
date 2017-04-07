@@ -1,4 +1,4 @@
-package com.example.slawomirmakurat.ekoagromarket.model.POJO;
+package com.example.slawomirmakurat.ekoagromarket.model.POJO.POJO;
 
 import android.support.annotation.Nullable;
 import android.widget.ImageView;
@@ -14,6 +14,7 @@ public class AddProduct {
     private Long id;
     private String title;
     private String text;
+    private String photoPatch;
     private Date dateAdd;
     private Integer seasonCheckbox;
     private Integer yearCheckbox;
@@ -24,11 +25,25 @@ public class AddProduct {
     @Nullable
     private List<Categories> categories;
 
-
-    public AddProduct(Long id, String title, String text, Date dateAdd, Integer seasonCheckbox, Integer yearCheckbox, Integer detailCheckbox, Integer wholesaleCheckbox, ImageView image, int price, List<Categories> categories) {
+    public AddProduct(Long id, String title, String text, String photoPatch, Date dateAdd, Integer seasonCheckbox, Integer yearCheckbox, Integer detailCheckbox, Integer wholesaleCheckbox, ImageView image, int price) {
         this.id = id;
         this.title = title;
         this.text = text;
+        this.photoPatch = photoPatch;
+        this.dateAdd = dateAdd;
+        this.seasonCheckbox = seasonCheckbox;
+        this.yearCheckbox = yearCheckbox;
+        this.detailCheckbox = detailCheckbox;
+        this.wholesaleCheckbox = wholesaleCheckbox;
+        this.image = image;
+        this.price = price;
+    }
+
+    public AddProduct(Long id, String title, String text, String photoPatch, Date dateAdd, Integer seasonCheckbox, Integer yearCheckbox, Integer detailCheckbox, Integer wholesaleCheckbox, ImageView image, int price, List<Categories> categories) {
+        this.id = id;
+        this.title = title;
+        this.text = text;
+        this.photoPatch = photoPatch;
         this.dateAdd = dateAdd;
         this.seasonCheckbox = seasonCheckbox;
         this.yearCheckbox = yearCheckbox;
@@ -37,19 +52,6 @@ public class AddProduct {
         this.image = image;
         this.price = price;
         this.categories = categories;
-    }
-
-    public AddProduct(Long id, String title, String text, Date dateAdd, Integer seasonCheckbox, Integer yearCheckbox, Integer detailCheckbox, Integer wholesaleCheckbox, ImageView image, int price) {
-        this.id = id;
-        this.title = title;
-        this.text = text;
-        this.dateAdd = dateAdd;
-        this.seasonCheckbox = seasonCheckbox;
-        this.yearCheckbox = yearCheckbox;
-        this.detailCheckbox = detailCheckbox;
-        this.wholesaleCheckbox = wholesaleCheckbox;
-        this.image = image;
-        this.price = price;
     }
 
     public Long getId() {
@@ -74,6 +76,14 @@ public class AddProduct {
 
     public void setText(String text) {
         this.text = text;
+    }
+
+    public String getPhotoPatch() {
+        return photoPatch;
+    }
+
+    public void setPhotoPatch(String photoPatch) {
+        this.photoPatch = photoPatch;
     }
 
     public Date getDateAdd() {
@@ -147,6 +157,7 @@ public class AddProduct {
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", text='" + text + '\'' +
+                ", photoPatch='" + photoPatch + '\'' +
                 ", dateAdd=" + dateAdd +
                 ", seasonCheckbox=" + seasonCheckbox +
                 ", yearCheckbox=" + yearCheckbox +

@@ -18,6 +18,9 @@ import android.widget.Toast;
 
 import com.example.slawomirmakurat.ekoagromarket.R;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -224,7 +227,7 @@ public class Register extends AppCompatActivity {
             checkPasswordEditText.setError(null);
         }
 
-        if (postcode.isEmpty() || postcode.length() <5 || postcode.length()> 5 ) {
+        if (postcode.isEmpty() || !isValidPostCode(postcode) ||postcode.length() <6 || postcode.length()> 6  ) {
             postcodeEditText.setError(getString(R.string.post_code));
             valid = false;
         } else {
@@ -238,6 +241,15 @@ public class Register extends AppCompatActivity {
             phoneNumberEditText.setError(null);
         }
         return valid;
+    }
+
+    private boolean isValidPostCode(String postcode) {
+        String POSTCODE_PATTERN = "[0-9]"+"-"+"[0-9]";
+        Pattern pattern = Pattern.compile(POSTCODE_PATTERN);
+        Matcher matcher = pattern.matcher(postcode);
+        return matcher.matches();
+
+
     }
 }
 

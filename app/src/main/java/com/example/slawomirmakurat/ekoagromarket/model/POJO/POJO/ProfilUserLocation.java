@@ -1,4 +1,4 @@
-package com.example.slawomirmakurat.ekoagromarket.model.POJO;
+package com.example.slawomirmakurat.ekoagromarket.model.POJO.POJO;
 
 /**
  * Created by slawomir.makurat on 2017-03-30.

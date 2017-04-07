@@ -1,4 +1,4 @@
-package com.example.slawomirmakurat.ekoagromarket.model.POJO;
+package com.example.slawomirmakurat.ekoagromarket.model.POJO.POJO;
 
 import android.support.annotation.Nullable;
 import android.widget.ImageView;
