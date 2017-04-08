@@ -18,10 +18,11 @@ public class UserAgro {
     private Integer certificate;
     private ImageView avatarUserAgro;
     private ImageView UserImage;
+    private String token;
     @Nullable
-    private List<AddProduct> news;
+    private List<AddProduct> products;
 
-    public UserAgro(int id, String login, String city, String post_code, Integer certificate, ImageView avatarUserAgro, ImageView userImage) {
+    public UserAgro(int id, String login, String city, String post_code, Integer certificate, ImageView avatarUserAgro, ImageView userImage, String token, List<AddProduct> products) {
         this.id = id;
         this.login = login;
         this.city = city;
@@ -29,17 +30,8 @@ public class UserAgro {
         this.certificate = certificate;
         this.avatarUserAgro = avatarUserAgro;
         UserImage = userImage;
-    }
-
-    public UserAgro(int id, String login, String city, String post_code, Integer certificate, ImageView avatarUserAgro, ImageView userImage, List<AddProduct> news) {
-        this.id = id;
-        this.login = login;
-        this.city = city;
-        this.post_code = post_code;
-        this.certificate = certificate;
-        this.avatarUserAgro = avatarUserAgro;
-        UserImage = userImage;
-        this.news = news;
+        this.token = token;
+        this.products = products;
     }
 
     public int getId() {
@@ -98,13 +90,21 @@ public class UserAgro {
         UserImage = userImage;
     }
 
-    @Nullable
-    public List<AddProduct> getNews() {
-        return news;
+    public String getToken() {
+        return token;
     }
 
-    public void setNews(@Nullable List<AddProduct> news) {
-        this.news = news;
+    public void setToken(String token) {
+        this.token = token;
+    }
+
+    @Nullable
+    public List<AddProduct> getProducts() {
+        return products;
+    }
+
+    public void setProducts(@Nullable List<AddProduct> products) {
+        this.products = products;
     }
 
     @Override
@@ -117,7 +117,8 @@ public class UserAgro {
                 ", certificate=" + certificate +
                 ", avatarUserAgro=" + avatarUserAgro +
                 ", UserImage=" + UserImage +
-                ", news=" + news +
+                ", token='" + token + '\'' +
+                ", products=" + products +
                 '}';
     }
 }

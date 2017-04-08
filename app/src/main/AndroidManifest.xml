@@ -26,16 +26,18 @@
             </intent-filter>
         </activity>
         <activity android:name=".drawer.DrawerAddAd" />
-        <activity android:name=".user.Register" />
         <activity android:name=".user.Login" />
+        <activity android:name=".user.RegisterActivity" />
         <activity
             android:name=".drawer.Profile_user"
             android:label="@string/title_activity_profile_user"
             android:theme="@style/AppTheme.NoActionBar" />
+
         <activity
             android:name=".model.POJO.view.ProductDetails"
             android:label="@string/title_activity_product_details"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
     </application>
 
 </manifest>

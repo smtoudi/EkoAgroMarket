@@ -1,7 +1,6 @@
 package com.example.slawomirmakurat.ekoagromarket.model.POJO.POJO;
 
 import android.support.annotation.Nullable;
-import android.widget.ImageView;
 
 import java.util.List;
 
@@ -11,62 +10,75 @@ import java.util.List;
 
 public class User {
 
-    private int userID;
-    private String userLogin;
-    private Integer favorite;
-    private ImageView avatarUser;
+    private Long id;
+    private String login;
+    private String mail;
+    private String phone;
+    private String postCode;
+    private String city;
 
 
     @Nullable
     private List<ProfilUserLocation> locations;
-    private List<RegisterUser> register;
+    private List<Register> register;
 
-    public User(int userID, String userLogin, Integer favorite, ImageView avatarUser, List<ProfilUserLocation> locations, List<RegisterUser> register) {
-        this.userID = userID;
-        this.userLogin = userLogin;
-        this.favorite = favorite;
-        this.avatarUser = avatarUser;
+    public User(Long id, String login, String mail, String phone, String postCode, String city, List<ProfilUserLocation> locations, List<Register> register) {
+        this.id = id;
+        this.login = login;
+        this.mail = mail;
+        this.phone = phone;
+        this.postCode = postCode;
+        this.city = city;
         this.locations = locations;
         this.register = register;
     }
 
-    public User(int userID, String userLogin, Integer favorite, ImageView avatarUser) {
-        this.userID = userID;
-        this.userLogin = userLogin;
-        this.favorite = favorite;
-        this.avatarUser = avatarUser;
+    public Long getId() {
+        return id;
     }
 
-    public int getUserID() {
-        return userID;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public void setUserID(int userID) {
-        this.userID = userID;
+    public String getLogin() {
+        return login;
     }
 
-    public String getUserLogin() {
-        return userLogin;
+    public void setLogin(String login) {
+        this.login = login;
     }
 
-    public void setUserLogin(String userLogin) {
-        this.userLogin = userLogin;
+    public String getMail() {
+        return mail;
     }
 
-    public Integer getFavorite() {
-        return favorite;
+    public void setMail(String mail) {
+        this.mail = mail;
     }
 
-    public void setFavorite(Integer favorite) {
-        this.favorite = favorite;
+    public String getPhone() {
+        return phone;
     }
 
-    public ImageView getAvatarUser() {
-        return avatarUser;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
-    public void setAvatarUser(ImageView avatarUser) {
-        this.avatarUser = avatarUser;
+    public String getPostCode() {
+        return postCode;
+    }
+
+    public void setPostCode(String postCode) {
+        this.postCode = postCode;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
     }
 
     @Nullable
@@ -78,21 +90,23 @@ public class User {
         this.locations = locations;
     }
 
-    public List<RegisterUser> getRegisteregister() {
+    public List<Register> getRegister() {
         return register;
     }
 
-    public void setregister(List<RegisterUser> register) {
+    public void setRegister(List<Register> register) {
         this.register = register;
     }
 
     @Override
     public String toString() {
         return "User{" +
-                "userID=" + userID +
-                ", userLogin='" + userLogin + '\'' +
-                ", favorite=" + favorite +
-                ", avatarUser=" + avatarUser +
+                "id=" + id +
+                ", login='" + login + '\'' +
+                ", mail='" + mail + '\'' +
+                ", phone='" + phone + '\'' +
+                ", postCode='" + postCode + '\'' +
+                ", city='" + city + '\'' +
                 ", locations=" + locations +
                 ", register=" + register +
                 '}';
