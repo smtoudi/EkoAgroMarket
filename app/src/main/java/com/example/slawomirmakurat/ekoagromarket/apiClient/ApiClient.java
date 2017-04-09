@@ -1,12 +1,10 @@
 package com.example.slawomirmakurat.ekoagromarket.apiClient;
 
-import com.example.slawomirmakurat.ekoagromarket.model.POJO.POJO.Category;
+import com.example.slawomirmakurat.ekoagromarket.model.POJO.POJO.Login;
 import com.example.slawomirmakurat.ekoagromarket.model.POJO.POJO.LoginResponse;
 import com.example.slawomirmakurat.ekoagromarket.model.POJO.POJO.Register;
 import com.example.slawomirmakurat.ekoagromarket.model.POJO.POJO.StatusResponse;
 import com.example.slawomirmakurat.ekoagromarket.model.POJO.POJO.User;
-import com.example.slawomirmakurat.ekoagromarket.model.POJO.view.ProductDetails;
-import com.example.slawomirmakurat.ekoagromarket.user.Login;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -25,16 +23,20 @@ public interface ApiClient {
 
     @POST("/users/user/login")
     @Headers({"Content-Type: application/json"})
-    Call<LoginResponse> login(@Body Login loginUser);
+    Call<LoginResponse> login(@Body Login login);
 
     @POST("/users/user/new")
     @Headers({"Content-Type: application/json"})
-    Call<RegisterResponse> register(@Body Register register);
+    Call<LoginResponse> register(@Body Register register);
 
     @GET("/users/user/logout")
     Call<StatusResponse> logout(@Header("Token") String token);
 
     @GET("/users/user/")
     Call<User> getUser(@Query("id") Integer id);
+
+
+
+
 
 }

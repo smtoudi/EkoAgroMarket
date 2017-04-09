@@ -15,12 +15,12 @@ public class AddAdUser {
 
     @Nullable
     private List<AddProduct> addAd;
-    private List<UserAgro> userAgros;
+    private List<User> user;
 
-    public AddAdUser(long id, List<AddProduct> addAd, List<UserAgro> userAgros) {
+    public AddAdUser(long id, List<AddProduct> addAd, List<User> user) {
         this.id = id;
         this.addAd = addAd;
-        this.userAgros = userAgros;
+        this.user = user;
     }
 
     public long getId() {
@@ -40,12 +40,12 @@ public class AddAdUser {
         this.addAd = addAd;
     }
 
-    public List<UserAgro> getUserAgros() {
-        return userAgros;
+    public List<User> getUser() {
+        return user;
     }
 
-    public void setUserAgros(List<UserAgro> userAgros) {
-        this.userAgros = userAgros;
+    public void setUser(List<User> user) {
+        this.user = user;
     }
 
     @Override
@@ -53,7 +53,7 @@ public class AddAdUser {
         return "AddAdUser{" +
                 "id=" + id +
                 ", addAd=" + addAd +
-                ", userAgros=" + userAgros +
+                ", user=" + user +
                 '}';
     }
 }

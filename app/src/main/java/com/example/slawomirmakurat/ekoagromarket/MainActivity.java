@@ -26,7 +26,7 @@ import android.widget.ImageView;
 
 import com.example.slawomirmakurat.ekoagromarket.drawer.DrawerAddAd;
 import com.example.slawomirmakurat.ekoagromarket.drawer.Profile_user;
-import com.example.slawomirmakurat.ekoagromarket.user.Login;
+import com.example.slawomirmakurat.ekoagromarket.user.LoginActivity;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -98,7 +98,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //                Snackbar.make(drawer, string.some_settings, Snackbar.LENGTH_SHORT).show();
 //               return true;
             case R.id.action_create_account:
-                Intent i = new Intent(this, Login.class);
+                Intent i = new Intent(this, LoginActivity.class);
                 startActivity(i);
                 return true;
 //            case R.id.search:

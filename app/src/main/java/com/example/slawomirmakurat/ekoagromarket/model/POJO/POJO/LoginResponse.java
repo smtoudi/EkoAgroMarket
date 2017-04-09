@@ -9,9 +9,13 @@ public class LoginResponse {
     private Long id;
     private String  token;
 
+    public LoginResponse(Status status, Long id, String token) {
+        this.status = status;
+        this.id = id;
+        this.token = token;
 
 
-
+    }
     public Status getStatus() {
         return status;
     }
@@ -36,11 +40,7 @@ public class LoginResponse {
         this.token = token;
     }
 
-    public LoginResponse(Status status, Long id, String token) {
-        this.status = status;
-        this.id = id;
-        this.token = token;
 
 
-    }
+
 }

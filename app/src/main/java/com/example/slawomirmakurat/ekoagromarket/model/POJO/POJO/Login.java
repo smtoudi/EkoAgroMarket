@@ -4,12 +4,12 @@ package com.example.slawomirmakurat.ekoagromarket.model.POJO.POJO;
  * Created by slawomir.makurat on 2017-03-30.
  */
 
-public class LoginUser {
+public class Login {
 
     private String email;
     private String password_hash;
 
-    public LoginUser(String email, String password_hash) {
+    public Login(String email, String password_hash) {
         this.email = email;
         this.password_hash = password_hash;
     }

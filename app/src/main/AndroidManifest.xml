@@ -26,8 +26,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".drawer.DrawerAddAd" />
-        <activity android:name=".user.Login" />
         <activity android:name=".user.RegisterActivity" />
+        <activity android:name=".user.LoginActivity" />
         <activity
             android:name=".drawer.Profile_user"
             android:label="@string/title_activity_profile_user"

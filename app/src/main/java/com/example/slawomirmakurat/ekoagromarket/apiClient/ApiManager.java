@@ -2,9 +2,9 @@ package com.example.slawomirmakurat.ekoagromarket.apiClient;
 
 import android.util.Log;
 
+import com.example.slawomirmakurat.ekoagromarket.model.POJO.POJO.Login;
 import com.example.slawomirmakurat.ekoagromarket.model.POJO.POJO.LoginResponse;
 import com.example.slawomirmakurat.ekoagromarket.model.POJO.POJO.Register;
-import com.example.slawomirmakurat.ekoagromarket.user.Login;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -15,19 +15,18 @@ import retrofit2.Response;
 import static com.example.slawomirmakurat.ekoagromarket.model.POJO.POJO.Status.ERROR;
 
 /**
- * Created by slawomir.makurat on 2017-04-08.
+ * Created by slawomir.makurat on 2017-04-09.
  */
 
 public class ApiManager {
 
-
-    private static ApiClient apiClient = new ApiClientFactory().create();
+    private static ApiClient newsApiClient = new ApiClientFactory().create();
 
     public static void login(final Login login, final OnLoginListener listener) {
         Gson gson = new GsonBuilder().create();
         String json = gson.toJson(login);
         System.out.println(json);
-        apiClient.login(login).enqueue(new Callback<LoginResponse>() {
+        newsApiClient.login(login).enqueue(new Callback<LoginResponse>() {
 
             @Override
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
@@ -48,38 +47,57 @@ public class ApiManager {
         });
     }
 
-    public static void register(final Register register, final OnRegisterListener listener) {
+    public static void register(final Register register, final OnLoginListener listener) {
         Gson gson = new GsonBuilder().create();
         String json = gson.toJson(register);
-        System.out.println(json);
-        apiClient.register(register).enqueue(new Callback<RegisterResponse>() {
+        newsApiClient.register(register).enqueue(new Callback<LoginResponse>() {
             @Override
-            public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
+            public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
                 if(response.isSuccessful()) {
                     System.out.println(response.body().getStatus());
-                    listener.onRegister(response.body());
+                    listener.onLogin(response.body());
                 } else {
-                    listener.onRegister(new RegisterResponse(ERROR, null, ""));
+                    listener.onLogin(new LoginResponse(ERROR, null, ""));
                 }
             }
 
             @Override
-            public void onFailure(Call<RegisterResponse> call, Throwable t) {
+            public void onFailure(Call<LoginResponse> call, Throwable t) {
                 Log.d("API MANAGER", "onFailure: " + t.getMessage());
                 Log.d("API MANAGER", "onFailure: " + t.getCause());
                 Log.d("API MANAGER", "onFailure: " + t.getStackTrace());
-
             }
         });
     }
+
+
+//    public static void checkAuth(String token, final OnAuthCheckListener listener) {
+//
+//        ApiClient.checkAuth(token).enqueue(new Callback<AuthResponse>() {
+//            @Override
+//            public void onResponse(Call<AuthResponse> call, Response<AuthResponse> response) {
+//                listener.onAuthCheck(response.body().isStatus());
+//            }
+//
+//            @Override
+//            public void onFailure(Call<AuthResponse> call, Throwable t) {
+//                Log.d("API MANAGER", "onFailure: " + t.getMessage());
+//                Log.d("API MANAGER", "onFailure: " + t.getCause());
+//                Log.d("API MANAGER", "onFailure: " + t.getStackTrace());
+//
+//            }
+//        });
+//    }
+
 
 
     public interface OnLoginListener {
         void onLogin(LoginResponse response);
     }
 
-    public interface OnRegisterListener {
-       void onRegister(RegisterResponse response);
+    public interface OnAuthCheckListener {
+        void onAuthCheck(Boolean response);
     }
+
 
 }
