@@ -7,10 +7,11 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * Created by slawomir.makurat on 2017-03-30.
+ * Created by slawomir.makurat on 2017-04-09.
  */
 
-public class AddProduct {
+public class ProductItem {
+
     private Long id;
     private String title;
     private String text;
@@ -25,21 +26,7 @@ public class AddProduct {
     @Nullable
     private List<Categories> categories;
 
-    public AddProduct(Long id, String title, String text, String photoPatch, Date dateAdd, Integer seasonCheckbox, Integer yearCheckbox, Integer detailCheckbox, Integer wholesaleCheckbox, ImageView image, int price) {
-        this.id = id;
-        this.title = title;
-        this.text = text;
-        this.photoPatch = photoPatch;
-        this.dateAdd = dateAdd;
-        this.seasonCheckbox = seasonCheckbox;
-        this.yearCheckbox = yearCheckbox;
-        this.detailCheckbox = detailCheckbox;
-        this.wholesaleCheckbox = wholesaleCheckbox;
-        this.image = image;
-        this.price = price;
-    }
-
-    public AddProduct(Long id, String title, String text, String photoPatch, Date dateAdd, Integer seasonCheckbox, Integer yearCheckbox, Integer detailCheckbox, Integer wholesaleCheckbox, ImageView image, int price, List<Categories> categories) {
+    public ProductItem(Long id, String title, String text, String photoPatch, Date dateAdd, Integer seasonCheckbox, Integer yearCheckbox, Integer detailCheckbox, Integer wholesaleCheckbox, ImageView image, int price, List<Categories> categories) {
         this.id = id;
         this.title = title;
         this.text = text;
@@ -153,7 +140,7 @@ public class AddProduct {
 
     @Override
     public String toString() {
-        return "AddProduct{" +
+        return "ProductItem{" +
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", text='" + text + '\'' +

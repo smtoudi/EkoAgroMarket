@@ -191,7 +191,7 @@
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent"
                         android:layout_marginBottom="8dp"
-                        android:src="@drawable/x_apple" />
+                        android:src="@drawable/x_agrest" />
                 </FrameLayout>
 
                 <FrameLayout
@@ -228,7 +228,7 @@
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent"
                         android:layout_marginBottom="8dp"
-                        android:src="@drawable/x_punch" />
+                        android:src="@drawable/x_agrest" />
                 </FrameLayout>
 
                 <FrameLayout
@@ -264,7 +264,7 @@
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent"
                         android:layout_marginBottom="8dp"
-                        android:src="@drawable/x_sliwki" />
+                        android:src="@drawable/x_agrest" />
                 </FrameLayout>
 
 
@@ -301,7 +301,7 @@
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent"
                         android:layout_marginBottom="8dp"
-                        android:src="@drawable/x_truskawka" />
+                        android:src="@drawable/x_agrest" />
                 </FrameLayout>
 
             </LinearLayout>

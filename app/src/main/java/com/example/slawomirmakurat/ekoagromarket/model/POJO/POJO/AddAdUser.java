@@ -14,10 +14,10 @@ public class AddAdUser {
 
 
     @Nullable
-    private List<AddProduct> addAd;
+    private List<Categories> addAd;
     private List<User> user;
 
-    public AddAdUser(long id, List<AddProduct> addAd, List<User> user) {
+    public AddAdUser(long id, List<Categories> addAd, List<User> user) {
         this.id = id;
         this.addAd = addAd;
         this.user = user;
@@ -32,11 +32,11 @@ public class AddAdUser {
     }
 
     @Nullable
-    public List<AddProduct> getAddAd() {
+    public List<Categories> getAddAd() {
         return addAd;
     }
 
-    public void setAddAd(@Nullable List<AddProduct> addAd) {
+    public void setAddAd(@Nullable List<Categories> addAd) {
         this.addAd = addAd;
     }
 

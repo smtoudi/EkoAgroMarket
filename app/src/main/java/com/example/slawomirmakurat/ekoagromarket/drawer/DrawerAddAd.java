@@ -33,7 +33,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.example.slawomirmakurat.ekoagromarket.R;
 
-import com.example.slawomirmakurat.ekoagromarket.model.POJO.POJO.AddProduct;
+//import com.example.slawomirmakurat.ekoagromarket.model.POJO.POJO.AddProduct;
 import com.example.slawomirmakurat.ekoagromarket.model.POJO.view.ProductDetails;
 
 import java.io.ByteArrayOutputStream;
@@ -86,7 +86,7 @@ public class DrawerAddAd extends AppCompatActivity {
     private ImageView Image;
     private String userChosenTask;
 
-    private AddProduct product;
+//    private AddProduct product;
     private String photoPath;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -245,37 +245,37 @@ public class DrawerAddAd extends AppCompatActivity {
     }
 
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-
-        if (resultCode == RESULT_OK && requestCode == REQUEST_TAKE_PHOTO) {
-            product.setPhotoPatch(photoPath);
-            updatePhoto();
-        } else if (resultCode == RESULT_CANCELED) {
-            Toast.makeText(this, "Anulowano", Toast.LENGTH_SHORT).show();
-        } else {
-            super.onActivityResult(requestCode, resultCode, data);
-        }
-    }
-
-    private void updatePhoto() {
-
-        if (product != null && product.getPhotoPatch() != null) {
-            camera_imageButton.setVisibility(View.GONE);
-            photoView.setVisibility(View.VISIBLE);
-            String photoPath = product.getPhotoPatch();
-            Glide.with(this).load(photoPath).fitCenter().into(photoView);
-        } else {
-            camera_imageButton.setVisibility(View.VISIBLE);
-            photoView.setVisibility(View.GONE);
-            camera_imageButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    dispatchTakePictureIntent();
-                }
-            });
-        }
-    }
+//    @Override
+//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+//
+//        if (resultCode == RESULT_OK && requestCode == REQUEST_TAKE_PHOTO) {
+//            product.setPhotoPatch(photoPath);
+//            updatePhoto();
+//        } else if (resultCode == RESULT_CANCELED) {
+//            Toast.makeText(this, "Anulowano", Toast.LENGTH_SHORT).show();
+//        } else {
+//            super.onActivityResult(requestCode, resultCode, data);
+//        }
+//    }
+//
+//    private void updatePhoto() {
+//
+//        if (product != null && product.getPhotoPatch() != null) {
+//            camera_imageButton.setVisibility(View.GONE);
+//            photoView.setVisibility(View.VISIBLE);
+//            String photoPath = product.getPhotoPatch();
+//            Glide.with(this).load(photoPath).fitCenter().into(photoView);
+//        } else {
+//            camera_imageButton.setVisibility(View.VISIBLE);
+//            photoView.setVisibility(View.GONE);
+//            camera_imageButton.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    dispatchTakePictureIntent();
+//                }
+//            });
+//        }
+//    }
     private void dispatchTakePictureIntent() {
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         if (takePictureIntent.resolveActivity(getPackageManager()) != null) {

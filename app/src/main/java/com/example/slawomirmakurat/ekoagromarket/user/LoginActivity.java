@@ -169,7 +169,7 @@ public class LoginActivity extends AppCompatActivity implements ApiManager.OnLog
         switch (status) {
             case OK:
                 Toast.makeText(this, getString(R.string.succes), Toast.LENGTH_SHORT).show();
-//                onLoggedIn(response.getId());
+                onLoggedIn(response.getId());
                 break;
             case UNAUTHORISED:
                 Toast.makeText(this, getString(R.string.wrong_password), Toast.LENGTH_SHORT).show();
@@ -177,17 +177,14 @@ public class LoginActivity extends AppCompatActivity implements ApiManager.OnLog
             case NO_USER:
                 Toast.makeText(this, getString(R.string.wrong_login), Toast.LENGTH_SHORT).show();
                 break;
-            case ERROR:
-                Toast.makeText(this, R.string.server_problem, Toast.LENGTH_SHORT).show();
         }
 
     }
-//    private void onLoggedIn(User user) {
-//        Toast.makeText(this,getString(R.string.welcome)+user.getLogin(),Toast.LENGTH_SHORT).show();
+    private void onLoggedIn(Long user) {
+        Toast.makeText(this,getString(R.string.welcome),Toast.LENGTH_SHORT).show();
 //        SessionManager.getInstance().setUser(user);
-//        startActivity(new Intent(this,MainActivity.class));
-//
-//    }
+        startActivity(new Intent(this,MainActivity.class));
+    }
 
 //
 //    @Override

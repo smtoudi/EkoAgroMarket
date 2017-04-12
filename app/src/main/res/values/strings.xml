@@ -1,7 +1,6 @@
 <resources>
     <string name="app_name">EkoAgroMarket</string>
 
-
     <string-array name="fragments">
         <item>Wybierz sekcję</item>
         <item>Paczki od rolnika</item>
@@ -92,6 +91,10 @@
     <string name="succes">Zalogowano poprawnie</string>
     <string name="new_ser">Dodano nowego użytkownika</string>
     <string name="login_already_exist_in_database">Ten login jest już zajęty</string>
+    <string name="SendMsgUserTextView">Adresat</string>
+    <string name="SendMsgUserTitleTextView">Tytuł</string>
+    <string name="SendMsgUserMSGTextView">Treść</string>
+    <string name="SendMsg">Wyślij</string>
 
 
 </resources>

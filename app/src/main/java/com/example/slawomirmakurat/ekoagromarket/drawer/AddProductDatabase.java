@@ -1,6 +1,7 @@
 package com.example.slawomirmakurat.ekoagromarket.drawer;
 
-import com.example.slawomirmakurat.ekoagromarket.model.POJO.POJO.AddProduct;
+//import com.example.slawomirmakurat.ekoagromarket.model.POJO.POJO.AddProduct;
+import com.example.slawomirmakurat.ekoagromarket.model.POJO.POJO.Category;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,13 +12,13 @@ import java.util.List;
 
 class AddProductDatabase {
 
-    private static List<AddProduct> categories = new ArrayList<>();
+    private static List<Category> categories = new ArrayList<>();
 
-    public static List<AddProduct> getCategories() {
+    public static List<Category> getCategories() {
         return categories;
     }
 
-  public static void addProduct(AddProduct category) {
+  public static void addProduct(Category category) {
       categories.add(category);
   }
 }

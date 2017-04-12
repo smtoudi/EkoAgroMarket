@@ -14,17 +14,12 @@ public class Category {
     private String name;
 
     @Nullable
-    private List<AddProduct>news;
+    private List<Categories>categoriesList;
 
-    public Category(int id, String name, List<AddProduct> news) {
+    public Category(int id, String name, List<Categories> categoriesList) {
         this.id = id;
         this.name = name;
-        this.news = news;
-    }
-
-    public Category(int id, String name) {
-        this.id = id;
-        this.name = name;
+        this.categoriesList = categoriesList;
     }
 
     public int getId() {
@@ -44,12 +39,12 @@ public class Category {
     }
 
     @Nullable
-    public List<AddProduct> getNews() {
-        return news;
+    public List<Categories> getCategoriesList() {
+        return categoriesList;
     }
 
-    public void setNews(@Nullable List<AddProduct> news) {
-        this.news = news;
+    public void setCategoriesList(@Nullable List<Categories> categoriesList) {
+        this.categoriesList = categoriesList;
     }
 
     @Override
@@ -57,7 +52,7 @@ public class Category {
         return "Category{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", news=" + news +
+                ", categoriesList=" + categoriesList +
                 '}';
     }
 }

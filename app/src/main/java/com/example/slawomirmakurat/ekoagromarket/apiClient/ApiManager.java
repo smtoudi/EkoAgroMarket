@@ -5,6 +5,8 @@ import android.util.Log;
 import com.example.slawomirmakurat.ekoagromarket.model.POJO.POJO.Login;
 import com.example.slawomirmakurat.ekoagromarket.model.POJO.POJO.LoginResponse;
 import com.example.slawomirmakurat.ekoagromarket.model.POJO.POJO.Register;
+import com.example.slawomirmakurat.ekoagromarket.model.POJO.POJO.User;
+import com.example.slawomirmakurat.ekoagromarket.model.POJO.POJO.UserResponse;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -20,18 +22,19 @@ import static com.example.slawomirmakurat.ekoagromarket.model.POJO.POJO.Status.E
 
 public class ApiManager {
 
-    private static ApiClient newsApiClient = new ApiClientFactory().create();
+    private static ApiClient ApiClient = new ApiClientFactory().create();
 
     public static void login(final Login login, final OnLoginListener listener) {
         Gson gson = new GsonBuilder().create();
         String json = gson.toJson(login);
         System.out.println(json);
-        newsApiClient.login(login).enqueue(new Callback<LoginResponse>() {
+       ApiClient.login(login).enqueue(new Callback<LoginResponse>() {
 
             @Override
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
                 if(response.isSuccessful()) {
                     System.out.println(response.body().getStatus());
+                    listener.onLogin(response.body());
                     listener.onLogin(response.body());
                 } else {
                     listener.onLogin(new LoginResponse(ERROR, null, ""));
@@ -50,7 +53,7 @@ public class ApiManager {
     public static void register(final Register register, final OnLoginListener listener) {
         Gson gson = new GsonBuilder().create();
         String json = gson.toJson(register);
-        newsApiClient.register(register).enqueue(new Callback<LoginResponse>() {
+        ApiClient.register(register).enqueue(new Callback<LoginResponse>() {
             @Override
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
                 if(response.isSuccessful()) {
@@ -70,25 +73,24 @@ public class ApiManager {
         });
     }
 
+    public static void getUserInfo(Integer id, final OnAuthorFetchedListener listener) throws ApiConnectException {
+        ApiClient.useerinfo(id).enqueue(new Callback<UserResponse>() {
+            @Override
+            public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
+                if(response.isSuccessful()) {
+                    Log.d("!!! API DATA", response.body().toString());
+                    listener.onAuthorFetched(response.body());
 
-//    public static void checkAuth(String token, final OnAuthCheckListener listener) {
-//
-//        ApiClient.checkAuth(token).enqueue(new Callback<AuthResponse>() {
-//            @Override
-//            public void onResponse(Call<AuthResponse> call, Response<AuthResponse> response) {
-//                listener.onAuthCheck(response.body().isStatus());
-//            }
-//
-//            @Override
-//            public void onFailure(Call<AuthResponse> call, Throwable t) {
-//                Log.d("API MANAGER", "onFailure: " + t.getMessage());
-//                Log.d("API MANAGER", "onFailure: " + t.getCause());
-//                Log.d("API MANAGER", "onFailure: " + t.getStackTrace());
-//
-//            }
-//        });
-//    }
+                }
+            }
 
+            @Override
+            public void onFailure(Call<UserResponse> call, Throwable t) {
+                Log.d("API MANAGER", "onFailure: " + t.getMessage());
+            }
+        });
+
+    }
 
 
     public interface OnLoginListener {
@@ -99,5 +101,8 @@ public class ApiManager {
         void onAuthCheck(Boolean response);
     }
 
+    public interface OnAuthorFetchedListener {
+        void onAuthorFetched(UserResponse userResponse);
+    }
 
 }

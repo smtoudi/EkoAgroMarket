@@ -16,6 +16,8 @@ public class ApiClientFactory {
 
     OkHttpClient.Builder builder =  new OkHttpClient.Builder();
     HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor();
+//    logging.setLevel(HttpLoggingInterceptor.Level.BODY);
+//    OkHttpClient.Builder.addInterceptor(httpLoggingInterceptor);
 
     public ApiClient create() {
 

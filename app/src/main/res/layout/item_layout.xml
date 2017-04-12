@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="85dp"
+            android:layout_height="85dp"
+            android:layout_marginBottom="4dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:elevation="4dp"
+            android:src="@drawable/ic_menu_share"
+            android:tag="image_tag"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/title_itemlist_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Nagłówek"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toRightOf="@+id/imageView"
+            app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+        <TextView
+            android:id="@+id/text_itemlist_textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:maxEms="2"
+            android:maxLength="100"
+            android:maxLines="2"
+            android:text="Tekst"
+            android:textSize="10sp"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toRightOf="@+id/imageView"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title_itemlist_textView" />
+
+        <TextView
+            android:id="@+id/user_itemlist_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Użytkownik"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView5"
+            app:layout_constraintLeft_toRightOf="@+id/imageView5"
+            android:layout_marginLeft="2dp"
+            android:layout_marginStart="2dp" />
+
+        <TextView
+            android:id="@+id/city_itemlist_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Miejscowość"
+            android:textSize="12sp"
+            app:layout_constraintTop_toTopOf="@+id/user_itemlist_textView"
+            app:layout_constraintLeft_toRightOf="@+id/imageView3"
+            android:layout_marginLeft="4dp"
+            android:layout_marginStart="4dp" />
+
+        <TextView
+            android:id="@+id/certyfiakte_itemlist_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginRight="8dp"
+            android:text="Certyfiakt"
+            app:layout_constraintBottom_toTopOf="@+id/text_itemlist_textView"
+            app:layout_constraintRight_toRightOf="@+id/text_itemlist_textView"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintTop_toTopOf="@+id/title_itemlist_textView" />
+
+        <TextView
+            android:id="@+id/time_itemlist_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dzień dostawy"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/city_itemlist_textView"
+            app:layout_constraintTop_toTopOf="@+id/city_itemlist_textView"
+            app:layout_constraintVertical_bias="0.0"
+            android:layout_marginRight="8dp"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginEnd="8dp" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            app:srcCompat="@android:drawable/ic_menu_myplaces"
+            app:layout_constraintLeft_toRightOf="@+id/user_itemlist_textView"
+            android:layout_marginLeft="4dp"
+            android:layout_marginStart="4dp"
+            app:layout_constraintTop_toTopOf="@+id/user_itemlist_textView" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="19dp"
+            android:layout_height="17dp"
+            app:srcCompat="@android:drawable/ic_menu_my_calendar"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView"
+            app:layout_constraintLeft_toRightOf="@+id/imageView"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp" />
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="15dp"
+            android:layout_height="17dp"
+            app:srcCompat="@android:drawable/ic_media_play"
+            app:layout_constraintRight_toLeftOf="@+id/time_itemlist_textView"
+            android:layout_marginRight="2dp"
+            app:layout_constraintTop_toTopOf="@+id/city_itemlist_textView"
+            android:layout_marginEnd="2dp" />
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="19dp"
+            android:layout_height="21dp"
+            app:srcCompat="@android:drawable/btn_star_big_on"
+            app:layout_constraintRight_toLeftOf="@+id/certyfiakte_itemlist_textView"
+            android:layout_marginRight="8dp"
+            app:layout_constraintTop_toTopOf="@+id/certyfiakte_itemlist_textView"
+            android:layout_marginEnd="8dp" />
+
+
+    </android.support.constraint.ConstraintLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/activity_divider_line_margin"
+        android:layout_alignParentBottom="true"
+        android:background="#42c448" />
+</LinearLayout>
