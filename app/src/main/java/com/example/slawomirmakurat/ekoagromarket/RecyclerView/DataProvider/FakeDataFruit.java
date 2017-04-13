@@ -8,7 +8,10 @@ import com.example.slawomirmakurat.ekoagromarket.R;
 
 public class FakeDataFruit {
 
+    public static Integer [] collapsingArray = { R.drawable.y_odrolnika, R.drawable.y_domowejroboty, R.drawable.y_owoce, R.drawable.y_warzywa, R.drawable.y_rybaimieso };
+
     public static String[] fruitTitleArray = {"Jabłka", "Gruszki", "Śliwki", "Winogorona", "Jeżyny", "Maliny", "Truskawki", "Poziomki", "Agrest", "Wiśnie", "Czereśnie"};
+    public static String[] serviceTitleArray = {"PaczkaXXL", "PaczkaL", "Złota Paczka", "Owocowa Paczka", "Mix Paczka", "Warzywna Paczka", "Sezonowa Paczka", "Wiosenna Paczka", "Ziołowa Paczka", "Domowa Paczka", "I love it"};
 
     public static String[] fruitTextArray = {"Możemy cieszyć się ich smakiem przez cały rok, chociaż jesienią są najtańsze. Sprawdzają się w deserach, znakomicie nadają do przetworów. Spośród wszystkich owoców Polacy wybierają je najchętniej. I bardzo dobrze: z punktu widzenia naszego zdrowia jabłka są nieocenione."
             , "Gruszki to owoce, których właściwości i wartości odżywcze są nie do przecenienia. Gruszki, jako jedne z nielicznych owoców, zawierają jod - minerał pozytywnie wpływający na funkcjonowanie tarczycy. Ponadto są skarbnicą boru - minerału poprawiającego pracę mózgu. Dodatkowo gruszki mogą zapobiec udarowi mózgu i rozwojowi nadciśnienia. Sprawdź, jakie jeszcze właściwości mają gruszki."
@@ -34,6 +37,9 @@ public class FakeDataFruit {
     public static Integer[] user_distanceArray = {35, 25, 39, 34, 15, 22 ,14, 49, 10, 14, 23};
 
     public static Integer[] fruit_drawableArray = {R.drawable.x_jablka, R.drawable.x_gruszki, R.drawable.x_sliwki, R.drawable.x_winogorna, R.drawable.x_jerzyny, R.drawable.x_maliny, R.drawable.x_truskawki, R.drawable.x_poziomki, R.drawable.x_agrest, R.drawable.x_wisnie, R.drawable.x_czeresnie};
+
+    public static Integer[] service_drawableArray = {R.drawable.x_paczka_1, R.drawable.x_paczka_2, R.drawable.x_paczka_3, R.drawable.x_paczka_4, R.drawable.x_paczka_5, R.drawable.x_paczka_6, R.drawable.x_paczka_7, R.drawable.x_paczka_8, R.drawable.x_paczka_9, R.drawable.x_paczka_10, R.drawable.x_paczka_11};
+
 
     public static Integer[] id = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 

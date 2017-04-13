@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private AppBarLayout appBarLayout;
     private ShareActionProvider mShareActionProvider;
     private CollapsingToolbarLayout collapsingToolbarLayout;
+    private ThreeTwoImageView threeTwoImageView;
 
 
     @Override
@@ -52,6 +53,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         appBarLayout = (AppBarLayout) findViewById(R.id.app_bar);
         collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
+        threeTwoImageView = (ThreeTwoImageView) findViewById(R.id.thereTwoImage);
 
         viewPager = (ViewPager) findViewById(R.id.content_main);
         viewPager.setAdapter(new com.example.slawomirmakurat.ekoagromarket.PagerAdapter(this, getSupportFragmentManager()));
@@ -71,7 +73,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
 
-
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.nav_open, R.string.nav_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
@@ -87,7 +88,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         ImageView avatarView = (ImageView) navigationView.getHeaderView(0).findViewById(R.id.avatar);
         avatarView.setImageDrawable(avatar);
     }
-
 
 
     @Override

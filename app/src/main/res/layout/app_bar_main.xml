@@ -23,6 +23,7 @@
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
             <com.example.slawomirmakurat.ekoagromarket.ThreeTwoImageView
+                android:id="@+id/thereTwoImage"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:contentDescription="@string/app_name"
